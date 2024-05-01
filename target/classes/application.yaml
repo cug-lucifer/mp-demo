@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mp
+logging:
+  level:
+    com.itheima: debug
+  pattern:
+    dateformat: HH:mm:ss
+mybatis-plus:
+  type-aliases-package: com.itheima.mp.domain.po
+  mapper-locations: "classpath*:/mapper/**/*.xml"
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+  global-config:
+    db-config:
+      id-type: assign_id
+      update-strategy: not_null
+knife4j:
+  enable: true
+  openapi:
+    title: 用户管理接口文档
+    description: "mp接口管理"
+    email: 1776253490@qq.com
+    concat: zjy
+    url: https://www.itcast.cn
+    version: v1.0.0
+    group:
+      default:
+        group-name: default
+        api-rule: package
+        api-rule-resources:
+          - com.itheima.mp.controller
